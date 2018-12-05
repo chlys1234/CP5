@@ -37,7 +37,9 @@ imshow(S);
 ### Refocusing and focal-stack generation
 -------------
 I was able to create a refocusing image with the following formula:
+
 ![image](https://user-images.githubusercontent.com/45420635/49525037-35029000-f8f0-11e8-9f7f-df985d2fc302.png)
+
 I set the u-v coordinate axis as follows, and then I made the focal-stack by increasing the value of d from 0 to 1.4 by 0.1. Coordinate values deviating from the coordinate axis are excluded.
 
 <pre><code> lensletSize = 16;
@@ -82,18 +84,23 @@ RR = uint8(R_temp./256);
 </code></pre>
 
 ####	The refocused image when the d value is 0.
+
 ![image](https://user-images.githubusercontent.com/45420635/49525158-798e2b80-f8f0-11e8-9de7-9e4dd3047fcf.png)
 
 ####	The refocused image when the d value is 0.3.
+
 ![image](https://user-images.githubusercontent.com/45420635/49525189-8f9bec00-f8f0-11e8-9db7-03f97122ed76.png)
 
 ####	The refocused image when the d value is 0.6.
+
 ![image](https://user-images.githubusercontent.com/45420635/49525197-96c2fa00-f8f0-11e8-8617-6062ae28bc08.png)
 
 ####	The refocused image when the d value is 1.0.
+
 ![image](https://user-images.githubusercontent.com/45420635/49525213-9d517180-f8f0-11e8-862f-c4fa8432b9da.png)
 
 ####	The refocused image when the d value is 1.4.
+
 ![image](https://user-images.githubusercontent.com/45420635/49525227-a3475280-f8f0-11e8-902c-0158a1e94ae6.png)
 
 ### All-focus image and depth from defocus
