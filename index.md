@@ -108,21 +108,27 @@ RR = uint8(R_temp./256);
 All-focusing image and depth map were generated through the following steps with focal-stack.
 
 1)	For every image in the focal stack, first convert it to the XYZ colorspace, and extract the luminance channel
+
 ![image](https://user-images.githubusercontent.com/45420635/49525311-d4c01e00-f8f0-11e8-947b-dd385bad3d94.png)
 
 2)	Create a low frequency component by blurring it with a Gaussian kernel of standard deviation
+
 ![image](https://user-images.githubusercontent.com/45420635/49525319-d8ec3b80-f8f0-11e8-9c89-991f3dbf0781.png)
 
 3)	Compute a high frequency component by subtracting the blurry image from the original
+
 ![image](https://user-images.githubusercontent.com/45420635/49525326-ddb0ef80-f8f0-11e8-886b-071cafb33b38.png)
 
 4)	Compute the sharpness weight by blurring the square of high frequency component with another Gaussian kernel of standard deviation
+
 ![image](https://user-images.githubusercontent.com/45420635/49525333-e1dd0d00-f8f0-11e8-8d5a-4bf136af0d9a.png)
 
 5)	Once you have the sharpness weights, you can compute the all-focus image
+
 ![image](https://user-images.githubusercontent.com/45420635/49525343-e6a1c100-f8f0-11e8-8dc0-ee9f13c0d736.png)
 
 6)	You can create a per-pixel depth map by using the weights to merge depth values instead of pixel intensities.
+
 ![image](https://user-images.githubusercontent.com/45420635/49525357-ec97a200-f8f0-11e8-9b04-c0f464912c09.png)
 
 #### Refocusing image and Depth map when σ_1=0.4, σ_2=0.4.
